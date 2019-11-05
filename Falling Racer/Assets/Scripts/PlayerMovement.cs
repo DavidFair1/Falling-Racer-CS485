@@ -10,15 +10,22 @@ using UnityEngine;
 */
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Rigidbody rb;
     [SerializeField] Transform cameraParent;
     [SerializeField] public float movementForce = 25f;
     [SerializeField] float maxSpeed_xy = 30f;
     [SerializeField] float maxSpeed_fall = -50f;
     [SerializeField] float fallSpeed = 2.5f;
     [SerializeField] float speedDecayRate = 25f;
+    Rigidbody rb;
+    Transform player;
     Vector3 movementDir;
-    
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        player = GetComponent<Transform>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -32,9 +39,16 @@ public class PlayerMovement : MonoBehaviour
             PlayerBrake(false);
 
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");        
+        float moveVertical = Input.GetAxis("Vertical");      
         movementDir.Set(moveHorizontal, 0f, moveVertical);
         movementDir.Normalize();
+
+
+        /*var toAngle = Quaternion.Euler(transform.eulerAngles + Vector3.forward * moveHorizontal * 20);
+        if (player.rotation.z < 20 && player.rotation.z > -20)
+            player.rotation = Quaternion.Euler(player.rotation.x, player.rotation.y, player.rotation.z + 20f * Time.deltaTime);
+        */
+
     }
 
     private void FixedUpdate()
