@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlaneEnemy : MonoBehaviour
 {
@@ -24,14 +23,12 @@ public class PlaneEnemy : MonoBehaviour
             transform.position = startPosition;
         else if(other.gameObject.tag == "Player")
         {
-            StartCoroutine(RestartLevel(other.gameObject));
+            RestartLevel(other.gameObject);
         }
     }
 
-    private IEnumerator RestartLevel(GameObject gameObject)
+    private void RestartLevel(GameObject gameObject)
     {
         Destroy(gameObject);
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(1);
     }
 }

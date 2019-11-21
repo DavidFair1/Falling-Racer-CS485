@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         bestTime = PlayerPrefs.GetFloat("Best Time");
         LevelEnding.levelEndingEvent.AddListener(EndLevel);
+        PlayerMovement.playerDestroyedEvent.AddListener(PlayerDeath);
     }
 
     // Update is called once per frame
@@ -45,5 +47,16 @@ public class GameManager : MonoBehaviour
         bestTimeText.text = "Best Time: " + System.Math.Round(bestTime, 2) + "s";
         heightInfoCanvas.gameObject.SetActive(false);
         endGameCanvas.gameObject.SetActive(true);
+    }
+
+    private void PlayerDeath()
+    {
+        StartCoroutine(RestartLevel());
+    }
+
+    private IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(1);
     }
 }
