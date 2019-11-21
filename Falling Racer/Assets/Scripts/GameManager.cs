@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Text finalTimeText;
-    [SerializeField] Text bestTimeText;
-    [SerializeField] Canvas heightInfoCanvas;
-    [SerializeField] Canvas endGameCanvas;
-    [SerializeField] EndGame endGameEventHolder;
+    [Header("UI Fields")] 
+    [SerializeField] private Canvas heightInfoCanvas;
+    [SerializeField] private Canvas endGameCanvas;
+    [SerializeField] private Text finalTimeText;
+    [SerializeField] private Text bestTimeText;
+
     private float timeElapsed = 0;
     private float bestTime;
 
     private void Start()
     {
         bestTime = PlayerPrefs.GetFloat("Best Time");
-        Debug.Log(bestTime);
-        endGameEventHolder.endGame.AddListener(EndGame);
+        LevelEnding.levelEndingEvent.AddListener(EndLevel);
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         timeElapsed += Time.deltaTime;
     }
 
-    private void EndGame()
+    private void EndLevel()
     {
         float finalTime = timeElapsed;
 
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         }
         finalTimeText.text = "Your Time: " + System.Math.Round(finalTime, 2) + "s";
         bestTimeText.text = "Best Time: " + System.Math.Round(bestTime, 2) + "s";
-        heightInfoCanvas.enabled = false;
+        heightInfoCanvas.gameObject.SetActive(false);
         endGameCanvas.gameObject.SetActive(true);
     }
 }
