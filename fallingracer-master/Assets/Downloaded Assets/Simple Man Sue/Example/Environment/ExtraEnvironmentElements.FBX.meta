@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: b8ee5b570f09674429d5b3890048f281
+timeCreated: 1542401060
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bottle
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Crow
+    100010: Crow2
+    100012: Cylinder001
+    100014: Cylinder002
+    100016: Cylinder005
+    100018: Cylinder012
+    100020: //RootNode
+    100022: Hobo
+    100024: PaperBoat
+    100026: Pug
+    100028: TreeBranch
+    400000: Bottle
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Crow
+    400010: Crow2
+    400012: Cylinder001
+    400014: Cylinder002
+    400016: Cylinder005
+    400018: Cylinder012
+    400020: //RootNode
+    400022: Hobo
+    400024: PaperBoat
+    400026: Pug
+    400028: TreeBranch
+    2100000: Trees
+    2100002: PaperBoat
+    2100004: Crow
+    2100006: CrowEyes
+    2100008: BottleLiquid
+    2100010: Bottle
+    2100012: Beard
+    2100014: 01 - Default
+    2100016: Hair
+    2100018: Beard2
+    2100020: 'Material #535'
+    2100022: 'Material #570'
+    2100024: matt
+    2100026: Eyelid
+    2100028: eyes
+    2100030: nose
+    2100032: 'Material #687'
+    2100034: piss
+    2100036: SimplePug
+    2300000: Box002
+    2300002: Box003
+    2300004: Box004
+    2300006: Cylinder001
+    2300008: Cylinder002
+    2300010: Cylinder012
+    2300012: PaperBoat
+    2300014: TreeBranch
+    3300000: Box002
+    3300002: Box003
+    3300004: Box004
+    3300006: Cylinder001
+    3300008: Cylinder002
+    3300010: Cylinder012
+    3300012: PaperBoat
+    3300014: TreeBranch
+    4300000: TreeBranch
+    4300002: PaperBoat
+    4300004: Crow
+    4300006: Cylinder002
+    4300008: Cylinder001
+    4300010: Hobo
+    4300012: Crow2
+    4300014: Box004
+    4300016: Box003
+    4300018: Cylinder012
+    4300020: Pug
+    4300022: Box002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Crow
+    13700002: Crow2
+    13700004: Hobo
+    13700006: Pug
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 207
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

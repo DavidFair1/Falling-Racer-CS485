@@ -1,0 +1,16 @@
+It's a low poly model which is set for high customization and Unity Humanoid animations so it can be easily used as a character with animations you want or you can use MIXAMO to animate and import animations you want. 
+Model uses single texture to avoid excessive draw calls and 1 extra texture for glasses lense. 
+
+PSD set for an easy specific color change (Located in Source Files Folder)
+
+Texture is set in solid colors , resolution 256x256px. Setup:
+5 haircuts
+5 hats 
+5 noses 
+6 glasses 
+4 mustache 
+6 beards 
+6 Lower Body Clothes 
+7 Upper Body Clothes 
+12 texture examples 
+5 blendShape emotions 3ds Studio max 2012 source files provided
