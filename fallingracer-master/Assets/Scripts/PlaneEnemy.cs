@@ -25,7 +25,14 @@ public class PlaneEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Boundaries")
-            transform.position = new Vector3 (startPosition.position.x, transform.position.y, transform.position.z);
+        {
+            float xpos = startPosition.position.x != 0 ? startPosition.position.x : transform.position.x;
+            Debug.Log(startPosition.position.x);
+            //float ypos = startPosition.position.y != 0 ? startPosition.position.y : transform.position.y;
+            float zpos = startPosition.position.z != 0 ? startPosition.position.z : transform.position.z;
+            transform.position = new Vector3(xpos, transform.position.y, zpos);
+        }
+           
         else if(other.gameObject.tag == "Player")
         {
             RestartLevel(other.gameObject);

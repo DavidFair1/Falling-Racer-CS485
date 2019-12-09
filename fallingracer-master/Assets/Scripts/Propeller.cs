@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Propeller : MonoBehaviour
 {
-    [SerializeField] float speed = 500f;
+    [SerializeField] Transform customPivot;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.right * speed * Time.deltaTime, Space.Self);     
+        transform.RotateAround(customPivot.position, Vector3.right, 1000 * Time.deltaTime);
     }
 }

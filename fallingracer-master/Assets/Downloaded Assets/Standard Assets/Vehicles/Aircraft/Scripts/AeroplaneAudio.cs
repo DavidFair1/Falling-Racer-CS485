@@ -57,12 +57,14 @@ namespace UnityStandardAssets.Vehicles.Aeroplane
             m_EngineSoundSource.maxDistance = m_AdvancedSetttings.engineMaxDistance;
             m_EngineSoundSource.loop = true;
             m_EngineSoundSource.dopplerLevel = m_AdvancedSetttings.engineDopplerLevel;
+            m_EngineSoundSource.spatialBlend = 1.0f;
             m_EngineSoundSource.volume = .25f;
 
             m_WindSoundSource.minDistance = m_AdvancedSetttings.windMinDistance;
             m_WindSoundSource.maxDistance = m_AdvancedSetttings.windMaxDistance;
             m_WindSoundSource.loop = true;
             m_WindSoundSource.dopplerLevel = m_AdvancedSetttings.windDopplerLevel;
+            m_WindSoundSource.spatialBlend = 1.0f;
             m_WindSoundSource.volume = .1f;
 
             // call update here to set the sounds pitch and volumes before they actually play
