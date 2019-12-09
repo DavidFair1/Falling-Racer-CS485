@@ -13,6 +13,10 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Transform cameraParent;
+    [SerializeField] GameObject playerModelFemale;
+    [SerializeField] GameObject playerModelMale;
+    [SerializeField] GameObject parachute;
+
     [SerializeField] public float movementForce = 25f;
     [SerializeField] float maxSpeed_xy = 30f;
     [SerializeField] float maxSpeed_fall = 50f;
@@ -21,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Transform player;
     Vector3 movementDir;
+    bool parachuteOpen = false;
 
     public static UnityEvent playerDestroyedEvent = new UnityEvent();
 
@@ -29,6 +34,24 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         player = this.transform;
+
+        switch(PlayerPrefs.GetFloat("Character Selected", -999))
+        {
+            case 0:
+                playerModelFemale.SetActive(true);
+                playerModelMale.SetActive(false);
+                break;
+            case 1:
+                playerModelFemale.SetActive(false);
+                playerModelMale.SetActive(true);
+                break;
+            case -999:
+                Debug.Log("Default value returned for character selection");
+                break;
+            default:
+                Debug.Log("ERROR: Invalid value returned for character selection");
+                break;
+        }
     }
 
     void Update()
@@ -38,10 +61,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
             PlayerDash(false);
 
+        /* Player Braking
         if (Input.GetKeyDown(KeyCode.Space))
             PlayerBrake(true);
         if (Input.GetKeyUp(KeyCode.Space))
             PlayerBrake(false);
+            */
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            StartCoroutine(OpenParachute());
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");      
@@ -74,6 +102,9 @@ public class PlayerMovement : MonoBehaviour
     #region Movement
     private void PlayerDash(bool isDashing)
     {
+        if (parachuteOpen)
+            return;
+
         // Disable main cam to cause camera transition with CinemachineBrain
         cameraParent.transform.gameObject.SetActive(!isDashing);
 
@@ -82,6 +113,21 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed_fall = isDashing ? maxSpeed_fall * dashSpeedMultiplier : maxSpeed_fall / dashSpeedMultiplier;
     }
 
+    private IEnumerator OpenParachute()
+    {
+        if (parachuteOpen)
+            yield break;
+
+        parachuteOpen = true;
+        parachute.SetActive(true);
+        yield return new WaitForSeconds(1f);
+
+        movementForce = 20f;
+        fallSpeedMultiplier = 1.25f;
+        maxSpeed_fall = 20f;   
+    }
+
+    /*
     private void PlayerBrake(bool isBraking)
     {
         float brakeSpeedMultiplier = 2f;
@@ -89,10 +135,12 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed_fall = isBraking ?  maxSpeed_fall / brakeSpeedMultiplier : maxSpeed_fall * brakeSpeedMultiplier;        
         fallSpeedDecayRate = isBraking ?  fallSpeedDecayRate * brakeSpeedMultiplier : fallSpeedDecayRate / brakeSpeedMultiplier;
     }
+    */
 
     private void RotatePlayerHorizontally(float horizontalInput)
     {
-        float newAngle = Mathf.LerpAngle(player.rotation.eulerAngles.z, 20f * -horizontalInput, Time.time);
+        float rotation = parachuteOpen ? 3f : 20f;
+        float newAngle = Mathf.LerpAngle(player.rotation.eulerAngles.z, rotation * -horizontalInput, Time.time);
         transform.eulerAngles = new Vector3(0, 0, newAngle);
 
     }

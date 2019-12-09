@@ -5,9 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [SerializeField] GameObject characterSelectCanvas;
+    [SerializeField] GameObject virtualCamera2;
+
     public void StartButton()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void SelectCharacter()
+    {
+        characterSelectCanvas.SetActive(true);
+        virtualCamera2.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void QuitButton()

@@ -2958,16 +2958,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7466a5850c76012428555cca45b7df8f, type: 2}
-    - target: {fileID: -6057140222963153312, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3021,6 +3011,16 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7466a5850c76012428555cca45b7df8f, type: 2}
+    - target: {fileID: -6057140222963153312, guid: ab7fc198d82bee7489a8bbe2ef7e919a,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4945,8 +4945,8 @@ Transform:
   m_Children:
   - {fileID: 350780222}
   - {fileID: 1423104690}
-  - {fileID: 1516132735}
   - {fileID: 499271567}
+  - {fileID: 1516132735}
   - {fileID: 883339700}
   m_Father: {fileID: 1611655461}
   m_RootOrder: 2
@@ -5374,12 +5374,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.50000024
       objectReference: {fileID: 0}
-    - target: {fileID: 3135319754171303290, guid: 62cdf1f0f6fdf9a4c87102576e0d2b5f,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62cdf1f0f6fdf9a4c87102576e0d2b5f, type: 3}
 --- !u!4 &1262993271 stripped
@@ -8838,6 +8832,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraParent: {fileID: 1596986148}
+  playerModelFemale: {fileID: 0}
+  playerModelMale: {fileID: 0}
+  parachute: {fileID: 0}
   movementForce: 25
   maxSpeed_xy: 30
   maxSpeed_fall: -50
@@ -9064,7 +9061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968214558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.10852432, y: -3000, z: -0.16338344}
+  m_LocalPosition: {x: 0, y: -1100, z: 0}
   m_LocalScale: {x: 200, y: 10, z: 200}
   m_Children:
   - {fileID: 660970016}

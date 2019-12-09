@@ -11,7 +11,7 @@ public class PlayerHeight : MonoBehaviour
     [SerializeField] private Text heightText;
     [SerializeField] private Slider heightSlider;
     [SerializeField] private Transform playerHeight;
-    private float startHeight = 1000;
+    private float startHeight = 1100;
     private bool playerIsAlive = true;
 
 

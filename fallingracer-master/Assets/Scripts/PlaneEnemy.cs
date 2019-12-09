@@ -27,8 +27,6 @@ public class PlaneEnemy : MonoBehaviour
         if (other.gameObject.tag == "Boundaries")
         {
             float xpos = startPosition.position.x != 0 ? startPosition.position.x : transform.position.x;
-            Debug.Log(startPosition.position.x);
-            //float ypos = startPosition.position.y != 0 ? startPosition.position.y : transform.position.y;
             float zpos = startPosition.position.z != 0 ? startPosition.position.z : transform.position.z;
             transform.position = new Vector3(xpos, transform.position.y, zpos);
         }

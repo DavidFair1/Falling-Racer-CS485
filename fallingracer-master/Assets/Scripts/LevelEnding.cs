@@ -16,7 +16,12 @@ public class LevelEnding : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            levelEndingEvent.Invoke();
+            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+            Debug.Log(rb.velocity.y);
+            if (Mathf.Abs(rb.velocity.y) > 20f)
+                Destroy(collision.gameObject);
+            else  
+                levelEndingEvent.Invoke();
         }
     }
 }
